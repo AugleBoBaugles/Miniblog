@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+        <h1>All Posts</h1>
+        <a href="/">Create a New Post</a> | <a href="/admin-posts">View Admin Posts</a>
+        <hr>
+        <% if (posts.length !== 0){ %>
+            
+
+            <% for (let i = 0; i < posts.length; i++){ %>
+                <div class="blogEntry">
+                    <h2><%= posts[i].title %></h2>
+                    <p> <%= posts[i].content %></p>
+                    <p>Author: <%= posts[i].author %></p>
+                    <p id="time"><%= posts[i].created_at %></p>
+                </div>
+                
+            <% } %>
+        <% } else { %>
+            <p>No Posts Found</p>
+        <% } %>
+        <hr>
+        
+        
+</body>
+</html>
